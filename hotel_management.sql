@@ -131,3 +131,19 @@ create table Payment(
    Note date,
    status bit
 )
+create table Admin (
+   ID int identity(1,1) primary key,
+   image nvarchar(100),
+   gender bit,
+   phone nvarchar(20),
+   email nvarchar(100),
+   status bit,
+   accountID int references Account(ID),
+   address nvarchar(100)
+
+)
+
+alter table Room
+add image nvarchar(100)
+
+insert into Admin values ('avatar.png',0,07941615517, 'hailinh0666@gmail.com',1,4, N'Hải Dương')
