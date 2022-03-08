@@ -5,7 +5,7 @@
 
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>roomtype-list</title>
+        <title>producttype-list</title>
         <!-- HTML5 Shim and Respond.js IE11 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 11]>
@@ -66,9 +66,9 @@
                         <li class="nav-item pcoded-hasmenu">
                             <a href="#!" class="nav-link"><span class="pcoded-micon"><i class="feather icon-box"></i></span><span class="pcoded-mtext">Componant</span></a>
                             <ul class="pcoded-submenu">
-                                <li class=""><a href="list" class="">Room Type</a></li>
+                                <li class=""><a href="../roomtype/list" class="">Room Type</a></li>
                                 <li class=""><a href="../room/list" class="">Room</a></li>
-                                <li class=""><a href="../producttype/list" class="">Product Type</a></li>
+                                <li class=""><a href="list" class="">Product Type</a></li>
                                 <li class=""><a href="../ListProductController" class="">Product</a></li>
                                 <li class=""><a href="../employeetype/list" class="">Employee Type</a></li>
                                 <li class=""><a href="../employee/list" class="">Employee</a></li>
@@ -125,52 +125,85 @@
                                         <div class="row align-items-center">
                                             <div class="col-md-12">
                                                 <div class="page-header-title">
-                                                    <h5>Room Type</h5>
+                                                    <h5>Product Type</h5>
                                                 </div>
                                                 <ul class="breadcrumb">
                                                     <li class="breadcrumb-item"><a href="../admin/home"><i class="feather icon-home"></i></a></li>
-                                                    <li class="breadcrumb-item"><a href="insert">Update Room Type</a></li>
+                                                    <li class="breadcrumb-item"><a href="list">Product Type Management</a></li>
                                                 </ul>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-
                                 <div class="col-xl-12 col-md-12" >
                                     <form action="update" method="POST">
-                                        <input type="hidden" name="roomtypeID" value="${rt.getID()}" />
+                                        <input type="hidden" name="producttypeID" value="${pt.getID()}" />
                                         <table class="table table-striped" style="border: 1px solid black;">
                                             <tr>
-                                                <th scope="row">Room Type Name: </th>
-                                                <td><input style="border: 1px solid black;" name="name" value="${rt.getRoomTypeName()}" type="text" class="form-control" placeholder="Room type name" aria-describedby="basic-addon1"></td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">Price: </th>
-                                                <td><input style="border: 1px solid black;" name="price" value="${rt.getPrice()}" type="text" class="form-control" placeholder="Price" aria-describedby="basic-addon1"></td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">Number Of People: </th>
-                                                <td><input style="border: 1px solid black;" name="people" value="${rt.getNumberOfPeople()}" type="text" class="form-control" placeholder="Number of people" aria-describedby="basic-addon1"></td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">Description: </th>
-                                                <td><p><input type="hidden" name="description2" value="${rt.getDescription()}" />${rt.getDescription()}</p>
-                                                    <textarea style="border: 1px solid black;" name="description" class="form-control" aria-label="With textarea"></textarea></td>
+                                                <th scope="row">Product Type Name: </th>
+                                                <td><input style="border: 1px solid black;" name="name" value="${pt.getProductTypeName()}" type="text" class="form-control" placeholder="Room type name" aria-describedby="basic-addon1"></td>
                                             </tr>
                                         </table>
                                         <button type="submit" class="btn btn-primary">Update</button>
                                     </form>
 
                                 </div>
-
-                                <!-- [ Main Content ] end -->
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        <!-- [ Main Content ] end -->
 
+        <!-- Warning Section start -->
+        <!-- Older IE warning message -->
+        <!--[if lt IE 11]>
+        <div class="ie-warning">
+            <h1>Warning!!</h1>
+            <p>You are using an outdated version of Internet Explorer, please upgrade
+               <br/>to any of the following web browsers to access this website.
+            </p>
+            <div class="iew-container">
+                <ul class="iew-download">
+                    <li>
+                        <a href="http://www.google.com/chrome/">
+                            <img src="../assets/images/browser/chrome.png" alt="Chrome">
+                            <div>Chrome</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.mozilla.org/en-US/firefox/new/">
+                            <img src="../assets/images/browser/firefox.png" alt="Firefox">
+                            <div>Firefox</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://www.opera.com">
+                            <img src="../assets/images/browser/opera.png" alt="Opera">
+                            <div>Opera</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.apple.com/safari/">
+                            <img src="../assets/images/browser/safari.png" alt="Safari">
+                            <div>Safari</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">
+                            <img src="../assets/images/browser/ie.png" alt="">
+                            <div>IE (11 & above)</div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <p>Sorry for the inconvenience!</p>
+        </div>
+    <![endif]-->
+        <!-- Warning Section Ends -->
+
+        <!-- Required Js -->
         <script src="../assets/js/vendor-all.min.js"></script>
         <script src="../assets/plugins/bootstrap/js/bootstrap.min.js"></script>
         <script src="../assets/js/pcoded.min.js"></script>
