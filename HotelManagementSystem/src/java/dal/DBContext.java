@@ -14,7 +14,7 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author Sap-lap
+ * @author 
  */
 public class DBContext {
     protected Connection connection;

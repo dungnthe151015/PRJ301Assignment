@@ -22,7 +22,7 @@ import model.Room;
 
 /**
  *
- * @author haili
+ * @author 
  */
 public class HomeAdminController extends HttpServlet {
 

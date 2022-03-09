@@ -17,7 +17,7 @@ import model.RoomType;
 
 /**
  *
- * @author haili
+ * @author 
  */
 public class ProductTypeDBContext extends DBContext {
 

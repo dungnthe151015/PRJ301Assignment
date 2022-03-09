@@ -16,7 +16,7 @@ import model.ProductType;
 
 /**
  *
- * @author haili
+ * @author 
  */
 public class ProductDBContext extends DBContext{
      private PreparedStatement ps;

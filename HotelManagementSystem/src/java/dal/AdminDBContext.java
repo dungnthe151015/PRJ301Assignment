@@ -17,7 +17,7 @@ import model.EmployeeType;
 
 /**
  *
- * @author haili
+ * @author 
  */
 public class AdminDBContext extends DBContext {
 
