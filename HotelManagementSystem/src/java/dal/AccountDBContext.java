@@ -15,7 +15,7 @@ import model.Role;
 
 /**
  *
- * @author 
+ * @author ASUS
  */
 public class AccountDBContext extends DBContext {
 

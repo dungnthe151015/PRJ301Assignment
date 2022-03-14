@@ -21,7 +21,7 @@ import model.Room;
 
 /**
  *
- * @author haili
+ * @author ASUS
  */
 public class HomeAdminController extends HttpServlet {
 

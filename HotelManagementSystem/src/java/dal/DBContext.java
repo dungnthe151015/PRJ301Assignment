@@ -14,7 +14,7 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author 
+ * @author ASUS
  */
 public class DBContext {
     protected Connection connection;

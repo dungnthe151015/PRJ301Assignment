@@ -9,7 +9,7 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author haili
+ * @author ASUS
  */
 public class ProductType {
 

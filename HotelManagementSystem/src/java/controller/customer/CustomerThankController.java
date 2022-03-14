@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author Duc Anh
+ * @author ASUS
  */
 public class CustomerThankController extends HttpServlet {
 

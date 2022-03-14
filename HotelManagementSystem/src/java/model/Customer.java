@@ -7,7 +7,7 @@ package model;
 
 /**
  *
- * @author Duc Anh
+ * @author ASUS
  */
 public class Customer {
 

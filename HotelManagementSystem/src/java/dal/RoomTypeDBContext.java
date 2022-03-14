@@ -16,7 +16,7 @@ import model.RoomType;
 
 /**
  *
- * @author 
+ * @author ASUS
  */
 public class RoomTypeDBContext extends DBContext {
 

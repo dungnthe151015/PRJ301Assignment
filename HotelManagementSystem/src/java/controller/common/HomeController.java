@@ -18,7 +18,7 @@ import model.Customer;
 
 /**
  *
- * @author haili
+ * @author ASUS
  */
 public class HomeController extends HttpServlet {
 

@@ -29,7 +29,7 @@ import model.Room;
 
 /**
  *
- * @author Dung
+ * @author ASUS
  */
 public class CutomerBookingController extends HttpServlet {
 

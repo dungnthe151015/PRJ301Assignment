@@ -7,7 +7,7 @@ package model;
 
 /**
  *
- * @author haili
+ * @author ASUS
  */
 public class Room {
 

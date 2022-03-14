@@ -19,7 +19,7 @@ import model.Room;
 
 /**
  *
- * @author Duc Anh
+ * @author ASUS
  */
 public class BookingDBContext extends DBContext {
 

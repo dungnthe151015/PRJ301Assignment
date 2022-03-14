@@ -23,7 +23,7 @@ import model.Payment;
 
 /**
  *
- * @author Duc Anh
+ * @author ASUS
  */
 public class PaymentDBContext extends DBContext {
 

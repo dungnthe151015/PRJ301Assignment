@@ -18,7 +18,7 @@ import model.Room;
 
 /**
  *
- * @author 
+ * @author ASUS
  */
 public class CustomerDBContext extends DBContext {
 

@@ -9,7 +9,7 @@ import java.sql.Date;
 
 /**
  *
- * @author Duc Anh
+ * @author ASUS
  */
 public class Payment {
 

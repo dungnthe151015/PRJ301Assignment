@@ -17,7 +17,7 @@ import model.Customer;
 
 /**
  *
- * @author Duc Anh
+ * @author ASUS
  */
 public class ListCustomerController extends HttpServlet {
 

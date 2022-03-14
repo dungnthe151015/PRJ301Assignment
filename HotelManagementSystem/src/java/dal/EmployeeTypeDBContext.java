@@ -17,7 +17,7 @@ import model.RoomType;
 
 /**
  *
- * @author 
+ * @author ASUS
  */
 public class EmployeeTypeDBContext extends DBContext {
 

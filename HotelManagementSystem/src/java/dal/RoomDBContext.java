@@ -19,7 +19,7 @@ import model.RoomType;
 
 /**
  *
- * @author haili
+ * @author ASUS
  */
 public class RoomDBContext extends DBContext {
 
