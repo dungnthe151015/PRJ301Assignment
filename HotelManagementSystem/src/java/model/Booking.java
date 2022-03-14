@@ -5,25 +5,34 @@
  */
 package model;
 
-import java.sql.Time;
+import java.sql.Date;
 
 /**
  *
  * @author Duc Anh
  */
 public class Booking {
+
     private int ID;
     private Customer customer;
     private Room room;
-    private Time checkIn;
-    private Time checkOut;
+    private Date checkIn;
+    private Date checkOut;
     private boolean status;
 
     public Booking() {
     }
-
-    public Booking(int ID, Customer customer, Room room, Time checkIn, Time checkOut, boolean status) {
+    
+    public Booking(int ID, Customer customer, Room room, Date checkIn, Date checkOut, boolean status) {
         this.ID = ID;
+        this.customer = customer;
+        this.room = room;
+        this.checkIn = checkIn;
+        this.checkOut = checkOut;
+        this.status = status;
+    }
+
+    public Booking(Customer customer, Room room, Date checkIn, Date checkOut, boolean b) {
         this.customer = customer;
         this.room = room;
         this.checkIn = checkIn;
@@ -55,19 +64,19 @@ public class Booking {
         this.room = room;
     }
 
-    public Time getCheckIn() {
+    public Date getCheckIn() {
         return checkIn;
     }
 
-    public void setCheckIn(Time checkIn) {
+    public void setCheckIn(Date checkIn) {
         this.checkIn = checkIn;
     }
 
-    public Time getCheckOut() {
+    public Date getCheckOut() {
         return checkOut;
     }
 
-    public void setCheckOut(Time checkOut) {
+    public void setCheckOut(Date checkOut) {
         this.checkOut = checkOut;
     }
 
@@ -83,6 +92,5 @@ public class Booking {
     public String toString() {
         return "Booking{" + "ID=" + ID + ", customer=" + customer + ", room=" + room + ", checkIn=" + checkIn + ", checkOut=" + checkOut + ", status=" + status + '}';
     }
-    
-    
+
 }

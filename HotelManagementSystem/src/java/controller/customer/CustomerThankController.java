@@ -3,23 +3,20 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package controller.authentication;
+package controller.customer;
 
-import dal.AccountDBContext;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import model.Account;
 
 /**
  *
  * @author Duc Anh
  */
-public class LoginController extends HttpServlet {
+public class CustomerThankController extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -38,10 +35,10 @@ public class LoginController extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet LoginController2</title>");
+            out.println("<title>Servlet CustomerThankController</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet LoginController2 at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet CustomerThankController at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -59,7 +56,7 @@ public class LoginController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        request.getRequestDispatcher("view/authentication/login.jsp").forward(request, response);
+        request.getRequestDispatcher("../view/customer/thanks.jsp").forward(request, response);
     }
 
     /**
@@ -73,35 +70,7 @@ public class LoginController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String username = request.getParameter("username");
-        String password = request.getParameter("password");
-        String remember = request.getParameter("remember");
-
-        AccountDBContext db = new AccountDBContext();
-        Account account = new Account(username, password);
-
-        Account loggedAccount = db.getOne(account);
-        if (loggedAccount != null) {
-            request.getSession().setAttribute("account", loggedAccount);
-            if (remember != null) {
-                Cookie user = new Cookie("username", loggedAccount.getUsername());
-                Cookie pass = new Cookie("password", loggedAccount.getPassword());
-                user.setMaxAge(3600 * 24 * 30);
-                pass.setMaxAge(3600 * 24 * 30);
-                response.addCookie(pass);
-                response.addCookie(user);
-            }
-            //response.getWriter().println("login successful!");
-            //response.sendRedirect("teacher/today_schedule");
-            if (loggedAccount.getRole() == 1) {
-                response.sendRedirect("admin/home");
-            } else if (loggedAccount.getRole() == 3) {
-                response.sendRedirect("common/home");
-            }
-        } else {
-            response.sendRedirect("login");
-            //response.getWriter().println("login failed!");
-        }
+        processRequest(request, response);
     }
 
     /**

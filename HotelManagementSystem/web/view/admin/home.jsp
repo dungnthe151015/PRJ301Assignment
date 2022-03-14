@@ -46,33 +46,31 @@
                 <div class="navbar-brand header-logo">
                     <a href="home" class="b-brand" style="color:white;">
                         HOTEL MANAGEMENT
-                        <!--<img src="../assets/images/logo_holiday.jpeg" alt="" class="logo images">
-                        <img src="../assets/images/logo_holiday.jpeg" alt="" class="logo-thumb images" >-->
                     </a>
                     <a class="mobile-menu" id="mobile-collapse" href="#!"><span></span></a>
                 </div>
                 <div class="navbar-content scroll-div">
                     <ul class="nav pcoded-inner-navbar">
                         <li class="nav-item pcoded-menu-caption">
-                            <label>Navigation</label>
+                            <label>Trang chủ</label>
                         </li>
                         <li class="nav-item">
-                            <a href="home" class="nav-link"><span class="pcoded-micon"><i class="feather icon-home"></i></span><span class="pcoded-mtext">Dashboard</span></a>
+                            <a href="home" class="nav-link"><span class="pcoded-micon"><i class="feather icon-home"></i></span><span class="pcoded-mtext">Trang chủ</span></a>
                         </li>
                         <li class="nav-item pcoded-menu-caption">
-                            <label>UI Element</label>
+                            <label>Quản lý</label>
                         </li>
                         <li class="nav-item pcoded-hasmenu">
-                            <a href="#!" class="nav-link"><span class="pcoded-micon"><i class="feather icon-box"></i></span><span class="pcoded-mtext">Componant</span></a>
+                            <a href="#!" class="nav-link"><span class="pcoded-micon"><i class="feather icon-box"></i></span><span class="pcoded-mtext">Các đối tượng</span></a>
                             <ul class="pcoded-submenu">
-                                <li class=""><a href="../roomtype/list" class="">Room Type</a></li>
-                                <li class=""><a href="../room/list" class="">Room</a></li>
-                                <li class=""><a href="../producttype/list" class="">Product Type</a></li>
-                                <li class=""><a href="../ListProductController" class="">Product</a></li>
-                                <li class=""><a href="../employeetype/list" class="">Employee Type</a></li>
-                                <li class=""><a href="../employee/list" class="">Employee</a></li>
-                                <li class=""><a href="../customer/list" class="">Customer</a></li>
-                                <li class=""><a href="../payment/list" class="">Payment Manage</a></li>
+                                <li class=""><a href="../roomtype/list" class="">Thể loại phòng</a></li>
+                                <li class=""><a href="../room/list" class="">Phòng</a></li>
+                                <li class=""><a href="../producttype/list" class="">Thể loại sản phẩm</a></li>
+                                <li class=""><a href="../ListProductController" class="">Sản phẩm</a></li>
+                                <li class=""><a href="../employeetype/list" class="">Vị trí nhân sự</a></li>
+                                <li class=""><a href="../employee/list" class="">Nhân sự</a></li>
+                                <li class=""><a href="../customer/list" class="">Khách hàng</a></li>
+                                <li class=""><a href="../payment/list" class="">Hóa đơn</a></li>
 
                             </ul>
                         </li>
@@ -103,8 +101,8 @@
                     </li>
                 </ul>
                 <ul class="navbar-nav ml-auto">
-                    <li style="font-weight: bold;">HELLO: ${sessionScope.account.getDisplayName()}</li>
-                    <li><a href="../logout" style="text-decoration: none;">Logout</a></li>
+                    <li style="font-weight: bold;">Xin chào: ${sessionScope.account.getDisplayName()}</li>
+                    <li><a href="../logout" style="text-decoration: none;">Đăng xuất</a></li>
                 </ul>
             </div>
         </header>
@@ -127,7 +125,7 @@
                                                 </div>
                                                 <ul class="breadcrumb">
                                                     <li class="breadcrumb-item"><a href="index.html"><i class="feather icon-home"></i></a></li>
-                                                    <li class="breadcrumb-item"><a href="#!">Analytics Dashboard</a></li>
+                                                    <li class="breadcrumb-item"><a href="#!">Phân tích</a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -143,7 +141,7 @@
                                             <div class="card-body">
                                                 <div class="row align-items-center m-b-25">
                                                     <div class="col">
-                                                        <h6 class="m-b-5 text-white">Total Employee</h6>
+                                                        <h6 class="m-b-5 text-white">Tổng <br> nhân sự</h6>
                                                         <h3 class="m-b-0 text-white">${total_employee}</h3>
                                                     </div>
                                                     <div class="col-auto">
@@ -158,8 +156,8 @@
                                             <div class="card-body">
                                                 <div class="row align-items-center m-b-25">
                                                     <div class="col">
-                                                        <h6 class="m-b-5 text-white">Total Customer</h6>
-                                                        <h3 class="m-b-0 text-white">15,830</h3>
+                                                        <h6 class="m-b-5 text-white">Tổng khách hàng</h6>
+                                                        <h3 class="m-b-0 text-white">${total_customer}</h3>
                                                     </div>
                                                     <div class="col-auto">
                                                         <i class="fas fa-database text-c-blue f-18"></i>
@@ -173,7 +171,7 @@
                                             <div class="card-body">
                                                 <div class="row align-items-center m-b-25">
                                                     <div class="col">
-                                                        <h6 class="m-b-5 text-white">Total <br>Room</h6>
+                                                        <h6 class="m-b-5 text-white">Tổng <br>phòng</h6>
                                                         <h3 class="m-b-0 text-white">${total_room}</h3>
                                                     </div>
                                                     <div class="col-auto">
@@ -188,8 +186,8 @@
                                             <div class="card-body">
                                                 <div class="row align-items-center m-b-25">
                                                     <div class="col">
-                                                        <h6 class="m-b-5 text-white">Total Payment</h6>
-                                                        <h3 class="m-b-0 text-white">6,784</h3>
+                                                        <h6 class="m-b-5 text-white">Tổng hóa đơn</h6>
+                                                        <h3 class="m-b-0 text-white">${total_payment}</h3>
                                                     </div>
                                                     <div class="col-auto">
                                                         <i class="fas fa-tags text-c-yellow f-18"></i>
@@ -647,7 +645,7 @@
                                     <div class="col-md-6 col-xl-4">
                                         <div class="card user-card">
                                             <div class="card-header">
-                                                <h5>Profile</h5>
+                                                <h5>Thông tin cá nhân</h5>
                                             </div>
                                             <div class="card-body  text-center">
                                                 <div class="usre-image">

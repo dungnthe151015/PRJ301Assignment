@@ -2,6 +2,7 @@
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <!------ Include the above in your HEAD tag ---------->
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
 <html>
@@ -23,7 +24,7 @@
             <div class="d-flex justify-content-center h-100">
                 <div class="card">
                     <div class="card-header">
-                        <h3>Sign In</h3>
+                        <h3>Đăng nhập</h3>
                         <div class="d-flex justify-content-end social_icon">
                             <span><i class="fab fa-facebook-square"></i></span>
                             <span><i class="fab fa-google-plus-square"></i></span>
@@ -49,16 +50,16 @@
                                 <input type="checkbox" name="remember">Remember Me
                             </div>
                             <div class="form-group">
-                                <input type="submit" value="Login" class="btn float-right login_btn">
+                                <input type="submit" value="Đăng nhập" class="btn float-right login_btn">
                             </div>
                         </form>
                     </div>
                     <div class="card-footer">
                         <div class="d-flex justify-content-center links">
-                            Don't have an account?<a href="#">Sign Up</a>
+                            Bạn không có tài khoản?<a href="#">Đăng kí</a>
                         </div>
                         <div class="d-flex justify-content-center">
-                            <a href="#">Forgot your password?</a>
+                            <a href="#">Bạn quên mật khẩu?</a>
                         </div>
                     </div>
                 </div>

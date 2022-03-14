@@ -68,6 +68,14 @@
         <servlet-name>HomeAdminController</servlet-name>
         <servlet-class>controller.admin.HomeAdminController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>CustomerListRoomController</servlet-name>
+        <servlet-class>controller.customer.CustomerListRoomController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CustomerListRoomController</servlet-name>
+        <url-pattern>/customer/list_room</url-pattern>
+    </servlet-mapping>
     <servlet-mapping>
         <servlet-name>HomeAdminController</servlet-name>
         <url-pattern>/admin/home</url-pattern>
@@ -191,6 +199,24 @@
     <servlet-mapping>
         <servlet-name>DeleteProductTypeController</servlet-name>
         <url-pattern>/producttype/delete</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>CutomerBookingController</servlet-name>
+        <servlet-class>controller.customer.CutomerBookingController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CutomerBookingController</servlet-name>
+        <url-pattern>/customer/booking</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>CustomerThankController</servlet-name>
+        <servlet-class>controller.customer.CustomerThankController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CustomerThankController</servlet-name>
+        <url-pattern>/customer/thanks</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
