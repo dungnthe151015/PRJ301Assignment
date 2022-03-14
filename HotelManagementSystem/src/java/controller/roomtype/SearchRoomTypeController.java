@@ -17,7 +17,7 @@ import model.RoomType;
 
 /**
  *
- * @author Duc Anh
+ * @author ASUS
  */
 public class SearchRoomTypeController extends HttpServlet {
 

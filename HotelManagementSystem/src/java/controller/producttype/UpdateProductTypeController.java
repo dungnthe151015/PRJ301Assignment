@@ -16,7 +16,7 @@ import model.ProductType;
 
 /**
  *
- * @author Duc Anh
+ * @author ASUS
  */
 public class UpdateProductTypeController extends HttpServlet {
 

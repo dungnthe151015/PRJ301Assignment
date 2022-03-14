@@ -16,7 +16,7 @@ import model.ProductType;
 
 /**
  *
- * @author Duc Anh
+ * @author ASUS
  */
 public class DeleteProductTypeController extends HttpServlet {
 

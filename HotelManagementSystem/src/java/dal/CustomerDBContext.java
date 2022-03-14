@@ -116,6 +116,34 @@ public class CustomerDBContext extends DBContext {
         }
         return null;
     }
+
+    public void update(Customer c) {
+        try {
+            String sql = "UPDATE [dbo].[Customer]\n"
+                    + "   SET [Phone] = ?\n"
+                    + "      ,[Email] = ?\n"
+                    + "      ,[Address] = ?\n"
+                    + "      ,[IDProof] = ?\n"
+                    + "      ,[gender] = ?\n"
+                    + "      ,[image] = ?\n"
+                    + "      ,[status] = ?\n"
+                    + "      ,[accountID] = ?\n"
+                    + " WHERE ID = ?";
+            ps = connection.prepareStatement(sql);
+            ps.setString(1, c.getPhone());
+            ps.setString(2, c.getEmail());
+            ps.setString(3, c.getAddress());
+            ps.setString(4, c.getIDProof());
+            ps.setBoolean(5, c.isGender());
+            ps.setString(6, c.getImage());
+            ps.setBoolean(7, c.isStatus());
+            ps.setInt(8, c.getAccountid().getID());
+            ps.setInt(9, c.getId());
+            ps.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(RoomDBContext.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 }
 //    private int id;
 //    private String phone;

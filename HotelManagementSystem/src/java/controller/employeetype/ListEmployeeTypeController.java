@@ -17,7 +17,7 @@ import model.EmployeeType;
 
 /**
  *
- * @author haili
+ * @author ASUS
  */
 public class ListEmployeeTypeController extends HttpServlet {
 

@@ -3,21 +3,23 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package controller.roomtype;
+package controller.customer;
 
-import dal.RoomTypeDBContext;
+import dal.CustomerDBContext;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import model.Account;
+import model.Customer;
 
 /**
  *
  * @author ASUS
  */
-public class DeleteRoomTypeController extends HttpServlet {
+public class CustomerEditProfileController extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -36,10 +38,10 @@ public class DeleteRoomTypeController extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet DeleteRoomTypeController</title>");            
+            out.println("<title>Servlet CustomerEditProfileController</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet DeleteRoomTypeController at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet CustomerEditProfileController at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -57,10 +59,12 @@ public class DeleteRoomTypeController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        int roomtypeID = Integer.parseInt(request.getParameter("roomtypeID"));
+        Account account = (Account)request.getSession().getAttribute("account");
+        Customer customer = new Customer();
+        customer = new CustomerDBContext().getOneByAccountID(account);
         
-        new RoomTypeDBContext().delete(roomtypeID);
-        response.sendRedirect("../roomtype/list");
+        request.setAttribute("customer", customer);
+        request.getRequestDispatcher("../view/customer/edit_profile.jsp").forward(request, response);
     }
 
     /**
@@ -74,7 +78,22 @@ public class DeleteRoomTypeController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        request.setCharacterEncoding("UTF-8");
+        response.setCharacterEncoding("UTF-8");
+        
+        Account account = (Account)request.getSession().getAttribute("account");
+        Customer customer = new Customer();
+        customer = new CustomerDBContext().getOneByAccountID(account);
+        
+        String email = request.getParameter("email");
+        String IDProof = request.getParameter("IDProof");
+        boolean gender = Boolean.parseBoolean(request.getParameter("gender"));
+        String address = request.getParameter("address");
+        String phone = request.getParameter("phone");
+        
+        Customer c = new Customer(customer.getId(), phone, email, address, IDProof, gender, customer.getImage(), customer.isStatus(), customer.getAccountid());
+        new CustomerDBContext().update(c);
+        response.sendRedirect("../customer/profile");
     }
 
     /**

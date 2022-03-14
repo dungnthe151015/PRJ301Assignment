@@ -17,7 +17,7 @@ import model.Room;
 
 /**
  *
- * @author haili
+ * @author ASUS
  */
 public class ListRoomController extends HttpServlet {
 

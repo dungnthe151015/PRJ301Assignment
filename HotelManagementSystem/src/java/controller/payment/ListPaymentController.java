@@ -17,7 +17,7 @@ import model.Payment;
 
 /**
  *
- * @author Duc Anh
+ * @author ASUS
  */
 public class ListPaymentController extends HttpServlet {
 

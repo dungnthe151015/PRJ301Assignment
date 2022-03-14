@@ -263,6 +263,33 @@
         <servlet-name>CustomerPaymentDetailController</servlet-name>
         <url-pattern>/customer/payment_detail</url-pattern>
     </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>CustomerSearchScheduleController</servlet-name>
+        <servlet-class>controller.customer.CustomerSearchScheduleController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CustomerSearchScheduleController</servlet-name>
+        <url-pattern>/customer/search_schedule</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>CustomerProfileController</servlet-name>
+        <servlet-class>controller.customer.CustomerProfileController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CustomerProfileController</servlet-name>
+        <url-pattern>/customer/profile</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>CustomerEditProfileController</servlet-name>
+        <servlet-class>controller.customer.CustomerEditProfileController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CustomerEditProfileController</servlet-name>
+        <url-pattern>/customer/edit_profile</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30

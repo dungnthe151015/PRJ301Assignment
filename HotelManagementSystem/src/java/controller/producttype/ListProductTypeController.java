@@ -18,7 +18,7 @@ import model.ProductType;
 
 /**
  *
- * @author haili
+ * @author ASUS
  */
 public class ListProductTypeController extends HttpServlet {
 
