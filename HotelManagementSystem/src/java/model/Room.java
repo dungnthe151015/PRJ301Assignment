@@ -24,6 +24,7 @@ public class Room {
         this.roomName = roomName;
         this.status = status;
         this.roomType = roomType;
+        this.image = image;
     }
 
     public Room(int ID, String roomName, boolean status, RoomType roomType, String image) {
@@ -31,6 +32,7 @@ public class Room {
         this.roomName = roomName;
         this.status = status;
         this.roomType = roomType;
+        this.image = image;
     }
 
     public int getID() {

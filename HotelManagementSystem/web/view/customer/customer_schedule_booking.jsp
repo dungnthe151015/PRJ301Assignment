@@ -1,3 +1,8 @@
+<%-- 
+    Document   : customer_schedule_booking
+    Created on : Mar 6, 2022, 6:43:55 PM
+    Author     : ASUS
+--%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -95,12 +100,11 @@
                         <a class="nav-link" href="../logout">Logout</a>
                     </li>
                 </c:if>
-
             </ul>
 
-            <form class="form-inline my-2 my-lg-0" action="../customer/search_room" method="POST">
+            <form class="form-inline my-2 my-lg-0" action="../customer/search_schedule" method="POST">
                 <div class="input-group input-group-sm">
-                    <input type="text"name="search" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" placeholder="Tìm...">
+                    <input type="date" name="search" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" placeholder="Tìm...">
                     <div class="input-group-append">
                         <button type="submit" class="btn btn-secondary btn-number">
                             <i class="fa fa-search"></i>
@@ -112,57 +116,33 @@
     </div>
 </nav>
 
-<div class="container" style="margin-top: 20px;margin-bottom: 20px;">
-    <div class="row">
-        <div class="col-12 col-sm-3">
-            <div class="card bg-light mb-3">
-                <div class="card-header bg-primary text-white text-uppercase"><i class="fa fa-list"></i> Loại phòng</div>
-                <ul class="list-group category_block">
-                    <c:forEach items="${list_rt}" var="rt">
-                        <li class="list-group-item"><a href="../customer/list_room_byrt?rtID=${rt.getID()}">${rt.getRoomTypeName()}</a></li>
-                        </c:forEach>
-                    <li class="list-group-item"><a href="../customer/list_room">All</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="col">
-            <div class="row">
-                <c:forEach items="${list_r}" var="r">
-                    <div class="col-12 col-md-6 col-lg-4" style="text-align: center;margin-bottom: 20px;">
-                        <div class="card">
-                            <img class="card-img-top" src="../img/room/${r.getImage()}" alt="Card image cap" style="height: 200px;">
-                            <h6 style="margin-top: 20px;">Số người ở: ${r.getRoomType().getNumberOfPeople()}</h6>
-                            <div class="card-body">
-                                <h4 class="card-title"><a href="../customer/room_detail?roomID=${r.getID()}" title="View Product">${r.getRoomName()}</a></h4>
-                                <div class="row">
-                                    <div class="col">
-                                        <p class="btn btn-danger btn-block">${r.getRoomType().getPrice()} </p>
-                                    </div>
-                                    <c:choose>
-                                        <c:when test="${r.isStatus() == true}">
-                                            <div class="col">
-                                                <a href="../customer/booking?roomID=${r.getID()}" class="btn btn-success btn-block">Đặt phòng ngay</a>
-                                            </div>
-                                        </c:when>
-                                        <c:otherwise>
-                                            <div class="col">
-                                                <a href="" class="btn btn-secondary btn-block">Hết phòng</a>
-                                            </div>
-                                        </c:otherwise>
-                                    </c:choose>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </c:forEach>
-            </div>
-        </div>
-
-    </div>
+<div class="container" style="margin-bottom: 20px;margin-top: 20px;">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">STT</th>
+                <th scope="col">Ảnh phòng</th>
+                <th scope="col">Ngày đặt phòng</th>
+                <th scope="col">Chi tiết</th>
+                <th scope="col">Hủy phòng</th>
+            </tr>
+        </thead>
+        <tbody>
+            <c:forEach items="${list_payment}" var="p" varStatus="status">
+                <tr>
+                    <th scope="row">${status.count}</th>
+                    <td><img src="../img/room/${p.getBooking().getRoom().getImage()}" style="height: 100px;widows: 120px;"></td>
+                    <td>${p.getDate()}</td>
+                    <td><button type="button" class="btn btn-dark"><a href="../customer/payment_detail?paymentID=${p.getID()}" style="color: white;text-decoration: none">Chi tiết</a></button>
+                    </td>
+                    <td><button type="button" class="btn btn-danger"><a href="../customer/cancel_room?paymentID=${p.getID()}" style="color: white;text-decoration: none">Hủy</a></button>
+                    </td>
+                </tr>
+            </c:forEach>
+        </tbody>
+    </table>
 </div>
 
-<!-- Footer -->
 <footer class="text-light">
     <div class="container">
         <div class="row">

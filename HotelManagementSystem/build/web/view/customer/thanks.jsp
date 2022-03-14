@@ -1,7 +1,7 @@
 <%-- 
     Document   : thanks
     Created on : Mar 8, 2022, 6:23:42 PM
-    Author     : Duc Anh
+    Author     : ASUS
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>

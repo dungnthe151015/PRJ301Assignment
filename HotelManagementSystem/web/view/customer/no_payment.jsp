@@ -95,7 +95,6 @@
                         <a class="nav-link" href="../logout">Logout</a>
                     </li>
                 </c:if>
-
             </ul>
 
             <form class="form-inline my-2 my-lg-0" action="../customer/search_room" method="POST">
@@ -112,57 +111,24 @@
     </div>
 </nav>
 
-<div class="container" style="margin-top: 20px;margin-bottom: 20px;">
+<div class="container-fluid mt-100" style="margin-top: 20px;margin-bottom: 20px;">
     <div class="row">
-        <div class="col-12 col-sm-3">
-            <div class="card bg-light mb-3">
-                <div class="card-header bg-primary text-white text-uppercase"><i class="fa fa-list"></i> Loại phòng</div>
-                <ul class="list-group category_block">
-                    <c:forEach items="${list_rt}" var="rt">
-                        <li class="list-group-item"><a href="../customer/list_room_byrt?rtID=${rt.getID()}">${rt.getRoomTypeName()}</a></li>
-                        </c:forEach>
-                    <li class="list-group-item"><a href="../customer/list_room">All</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="col">
-            <div class="row">
-                <c:forEach items="${list_r}" var="r">
-                    <div class="col-12 col-md-6 col-lg-4" style="text-align: center;margin-bottom: 20px;">
-                        <div class="card">
-                            <img class="card-img-top" src="../img/room/${r.getImage()}" alt="Card image cap" style="height: 200px;">
-                            <h6 style="margin-top: 20px;">Số người ở: ${r.getRoomType().getNumberOfPeople()}</h6>
-                            <div class="card-body">
-                                <h4 class="card-title"><a href="../customer/room_detail?roomID=${r.getID()}" title="View Product">${r.getRoomName()}</a></h4>
-                                <div class="row">
-                                    <div class="col">
-                                        <p class="btn btn-danger btn-block">${r.getRoomType().getPrice()} </p>
-                                    </div>
-                                    <c:choose>
-                                        <c:when test="${r.isStatus() == true}">
-                                            <div class="col">
-                                                <a href="../customer/booking?roomID=${r.getID()}" class="btn btn-success btn-block">Đặt phòng ngay</a>
-                                            </div>
-                                        </c:when>
-                                        <c:otherwise>
-                                            <div class="col">
-                                                <a href="" class="btn btn-secondary btn-block">Hết phòng</a>
-                                            </div>
-                                        </c:otherwise>
-                                    </c:choose>
-
-                                </div>
-                            </div>
-                        </div>
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Lịch đặt phòng</h5>
+                </div>
+                <div class="card-body cart">
+                    <div class="col-sm-12 empty-cart-cls text-center"> <img src="https://i.imgur.com/dCdflKN.png" width="130" height="130" class="img-fluid mb-4 mr-3">
+                        <h3><strong>Bạn chưa đặt phòng</strong></h3>
+                        <h4>Hãy thử đặt phòng tại khách sạn chúng tôi</h4> <a href="../customer/list_room" class="btn btn-primary cart-btn-transform m-3" data-abc="true">Đặt phòng ngay</a>
                     </div>
-                </c:forEach>
+                </div>
             </div>
         </div>
-
     </div>
 </div>
 
-<!-- Footer -->
 <footer class="text-light">
     <div class="container">
         <div class="row">

@@ -218,6 +218,51 @@
         <servlet-name>CustomerThankController</servlet-name>
         <url-pattern>/customer/thanks</url-pattern>
     </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>CustomerListRByRTController</servlet-name>
+        <servlet-class>controller.customer.CustomerListRByRTController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CustomerListRByRTController</servlet-name>
+        <url-pattern>/customer/list_room_byrt</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>CustomerSearchRoom</servlet-name>
+        <servlet-class>controller.customer.CustomerSearchRoom</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CustomerSearchRoom</servlet-name>
+        <url-pattern>/customer/search_room</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>CustomerScheduleBooking</servlet-name>
+        <servlet-class>controller.customer.CustomerScheduleBooking</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CustomerScheduleBooking</servlet-name>
+        <url-pattern>/customer/schedule_booking</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>CustomerNoPaymentController</servlet-name>
+        <servlet-class>controller.customer.CustomerNoPaymentController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CustomerNoPaymentController</servlet-name>
+        <url-pattern>/customer/no_payment</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>CustomerPaymentDetailController</servlet-name>
+        <servlet-class>controller.customer.CustomerPaymentDetailController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CustomerPaymentDetailController</servlet-name>
+        <url-pattern>/customer/payment_detail</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30
