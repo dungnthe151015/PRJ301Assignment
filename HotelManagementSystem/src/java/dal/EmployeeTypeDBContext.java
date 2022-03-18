@@ -88,4 +88,18 @@ public class EmployeeTypeDBContext extends DBContext {
         return null;
     }
 
+    public void update(EmployeeType et) {
+        try {
+            String sql = "UPDATE [dbo].[Employee_Type]\n"
+                    + "   SET [employeeType] = ?\n"
+                    + " WHERE ID = ?";
+            ps = connection.prepareStatement(sql);
+            ps.setString(1, et.getEmployeeTypeName());
+            ps.setInt(2, et.getID());
+            ps.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(RoomDBContext.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
 }
