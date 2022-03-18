@@ -17,6 +17,10 @@ public class EmployeeType {
     public EmployeeType() {
     }
 
+    public EmployeeType(String employeeTypeName) {
+        this.employeeTypeName = employeeTypeName;
+    }
+
     public EmployeeType(int ID, String employeeTypeName) {
         this.ID = ID;
         this.employeeTypeName = employeeTypeName;

@@ -57,4 +57,18 @@ public class EmployeeTypeDBContext extends DBContext {
         return null;
     }
 
+    public void insert(EmployeeType et) {
+        try {
+            String sql = "INSERT INTO [dbo].[Employee_Type]\n"
+                    + "           ([employeeType])\n"
+                    + "     VALUES\n"
+                    + "           (?)";
+            ps = connection.prepareStatement(sql);
+            ps.setString(1, et.getEmployeeTypeName());
+            ps.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(RoomDBContext.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
 }
