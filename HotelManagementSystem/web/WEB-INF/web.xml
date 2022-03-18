@@ -371,6 +371,16 @@
         <servlet-name>InsertProductController</servlet-name>
         <url-pattern>/product/insert</url-pattern>
     </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>SearchController</servlet-name>
+        <servlet-class>controller.product.SearchController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SearchController</servlet-name>
+        <url-pattern>/search_product</url-pattern>
+    </servlet-mapping>
+    
     <session-config>
         <session-timeout>
             30

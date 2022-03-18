@@ -123,4 +123,28 @@ public class ProductDBContext extends DBContext {
             Logger.getLogger(ProductTypeDBContext.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+
+    public ArrayList<Product> search(String text_search) {
+        ArrayList<Product> list = new ArrayList<>();
+        try {
+            String sql = "select * from Product where productName like '%" + text_search + "%'";
+            ps = connection.prepareStatement(sql);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                ProductType producType = new ProductType();
+                producType = new ProductTypeDBContext().getOne(rs.getInt(4));
+                Product pro = new Product(rs.getInt(1),
+                        rs.getString(2),
+                        rs.getDouble(3),
+                        producType,
+                        rs.getInt(5),
+                        rs.getString(6), rs.getBoolean(7));
+                list.add(pro);
+            }
+            return list;
+        } catch (SQLException ex) {
+            Logger.getLogger(ProductTypeDBContext.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return null;
+    }
 }
