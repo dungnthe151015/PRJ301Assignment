@@ -75,4 +75,16 @@ public class BookingDBContext extends DBContext {
         return 0;
     }
 
+    public void delete(int id) {
+        try {
+            String sql = "DELETE FROM [dbo].[Booking]\n"
+                    + "      WHERE ID = ?";
+            ps = connection.prepareStatement(sql);
+            ps.setInt(1, id);
+            ps.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(RoomDBContext.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
 }

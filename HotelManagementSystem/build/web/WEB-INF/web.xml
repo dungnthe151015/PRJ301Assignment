@@ -290,6 +290,15 @@
         <servlet-name>CustomerEditProfileController</servlet-name>
         <url-pattern>/customer/edit_profile</url-pattern>
     </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>CustomerCancelRoomController</servlet-name>
+        <servlet-class>controller.customer.CustomerCancelRoomController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CustomerCancelRoomController</servlet-name>
+        <url-pattern>/customer/cancel_room</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30
