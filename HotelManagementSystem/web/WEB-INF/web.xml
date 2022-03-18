@@ -326,6 +326,25 @@
         <servlet-name>SearchEmployeeController</servlet-name>
         <url-pattern>/employee/search</url-pattern>
     </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>InsertEmployeeTypeController</servlet-name>
+        <servlet-class>controller.employeetype.InsertEmployeeTypeController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>InsertEmployeeTypeController</servlet-name>
+        <url-pattern>/employeetype/insert</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>SearchEmployeeTypeController</servlet-name>
+        <servlet-class>controller.employeetype.SearchEmployeeTypeController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SearchEmployeeTypeController</servlet-name>
+        <url-pattern>/employeetype/search</url-pattern>
+    </servlet-mapping>
+    
     <session-config>
         <session-timeout>
             30

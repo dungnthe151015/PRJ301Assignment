@@ -71,4 +71,21 @@ public class EmployeeTypeDBContext extends DBContext {
         }
     }
 
+    public ArrayList<EmployeeType> search(String text_search) {
+        ArrayList<EmployeeType> list = new ArrayList<>();
+        try {
+            String sql = "select * from Employee_Type where employeeType like '%" + text_search + "%'";
+            ps = connection.prepareStatement(sql);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                EmployeeType et = new EmployeeType(rs.getInt(1), rs.getString(2));
+                list.add(et);
+            }
+            return list;
+        } catch (SQLException ex) {
+            Logger.getLogger(RoomDBContext.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return null;
+    }
+
 }
