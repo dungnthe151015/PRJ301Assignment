@@ -299,6 +299,15 @@
         <servlet-name>CustomerCancelRoomController</servlet-name>
         <url-pattern>/customer/cancel_room</url-pattern>
     </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>CustomerRoomDetailController</servlet-name>
+        <servlet-class>controller.customer.CustomerRoomDetailController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CustomerRoomDetailController</servlet-name>
+        <url-pattern>/customer/room_detail</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30
