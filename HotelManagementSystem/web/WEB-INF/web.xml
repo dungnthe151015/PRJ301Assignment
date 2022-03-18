@@ -381,6 +381,15 @@
         <url-pattern>/search_product</url-pattern>
     </servlet-mapping>
     
+    <servlet>
+        <servlet-name>UpdateProductController</servlet-name>
+        <servlet-class>controller.product.UpdateProductController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UpdateProductController</servlet-name>
+        <url-pattern>/product/update</url-pattern>
+    </servlet-mapping>
+    
     <session-config>
         <session-timeout>
             30
