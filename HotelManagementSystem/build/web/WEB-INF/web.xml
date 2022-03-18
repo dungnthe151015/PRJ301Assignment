@@ -308,6 +308,15 @@
         <servlet-name>CustomerRoomDetailController</servlet-name>
         <url-pattern>/customer/room_detail</url-pattern>
     </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>InsertEmployeeController</servlet-name>
+        <servlet-class>controller.employee.InsertEmployeeController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>InsertEmployeeController</servlet-name>
+        <url-pattern>/customer/room_detail</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30
