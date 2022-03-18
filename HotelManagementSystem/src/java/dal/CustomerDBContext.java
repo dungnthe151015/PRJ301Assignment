@@ -144,6 +144,21 @@ public class CustomerDBContext extends DBContext {
             Logger.getLogger(RoomDBContext.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+
+    public int getTotal() {
+        int total = 0;
+        try {
+            String sql = "select count(*) from Customer";
+            ps = connection.prepareStatement(sql);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                total = rs.getInt(1);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(RoomDBContext.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return total;
+    }
 }
 //    private int id;
 //    private String phone;

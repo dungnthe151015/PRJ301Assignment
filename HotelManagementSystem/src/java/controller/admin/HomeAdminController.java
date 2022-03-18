@@ -6,7 +6,9 @@
 package controller.admin;
 
 import dal.AdminDBContext;
+import dal.CustomerDBContext;
 import dal.EmployeeDBContext;
+import dal.PaymentDBContext;
 import dal.RoomDBContext;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -73,10 +75,14 @@ public class HomeAdminController extends HttpServlet {
         
         int total_employee = new EmployeeDBContext().getTotal();
         int total_room = new RoomDBContext().getTotal();
+        int total_customer = new CustomerDBContext().getTotal();
+        int total_payment = new PaymentDBContext().getTotal();
         
         request.setAttribute("total_employee", total_employee);
         request.setAttribute("a", a);
         request.setAttribute("total_room", total_room);
+        request.setAttribute("total_customer", total_customer);
+        request.setAttribute("total_payment", total_payment);
         request.getRequestDispatcher("../view/admin/home.jsp").forward(request, response);
     }
 
