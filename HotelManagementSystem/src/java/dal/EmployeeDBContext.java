@@ -68,4 +68,31 @@ public class EmployeeDBContext extends DBContext {
         int total = new EmployeeDBContext().getTotal();
         System.out.println(total);
     }
+
+    public ArrayList<Employee> search(String text_search) {
+        ArrayList<Employee> list = new ArrayList<>();
+        try {
+            String sql = "select Employee.* from Employee \n"
+                    + "inner join Account on Employee.accountID = Account.ID\n"
+                    + "where displayName like '%" + text_search + "%'";
+            ps = connection.prepareStatement(sql);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                EmployeeType employeeType = new EmployeeType();
+                employeeType = new EmployeeTypeDBContext().getOne(rs.getInt(2));
+
+                Account account = new Account();
+                account = new AccountDBContext().getAccountByID(rs.getInt(4));
+
+                Employee e = new Employee(rs.getInt(1), employeeType,
+                        rs.getBoolean(3), account, rs.getString(5), rs.getBoolean(6), rs.getString(7), rs.getString(8));
+
+                list.add(e);
+            }
+            return list;
+        } catch (SQLException ex) {
+            Logger.getLogger(RoomDBContext.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return null;
+    }
 }

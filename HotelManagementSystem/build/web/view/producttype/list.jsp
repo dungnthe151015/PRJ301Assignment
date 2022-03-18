@@ -55,25 +55,25 @@
                 <div class="navbar-content scroll-div">
                     <ul class="nav pcoded-inner-navbar">
                         <li class="nav-item pcoded-menu-caption">
-                            <label>Navigation</label>
+                            <label>Trang chủ</label>
                         </li>
                         <li class="nav-item">
-                            <a href="../admin/home" class="nav-link"><span class="pcoded-micon"><i class="feather icon-home"></i></span><span class="pcoded-mtext">Dashboard</span></a>
+                            <a href="../admin/home" class="nav-link"><span class="pcoded-micon"><i class="feather icon-home"></i></span><span class="pcoded-mtext">Trang chủ</span></a>
                         </li>
                         <li class="nav-item pcoded-menu-caption">
-                            <label>UI Element</label>
+                            <label>Quản lý</label>
                         </li>
                         <li class="nav-item pcoded-hasmenu">
-                            <a href="#!" class="nav-link"><span class="pcoded-micon"><i class="feather icon-box"></i></span><span class="pcoded-mtext">Componant</span></a>
+                            <a href="#!" class="nav-link"><span class="pcoded-micon"><i class="feather icon-box"></i></span><span class="pcoded-mtext">Các đối tượng</span></a>
                             <ul class="pcoded-submenu">
-                                <li class=""><a href="../roomtype/list" class="">Room Type</a></li>
-                                <li class=""><a href="../room/list" class="">Room</a></li>
-                                <li class=""><a href="list" class="">Product Type</a></li>
-                                <li class=""><a href="../ListProductController" class="">Product</a></li>
-                                <li class=""><a href="../employeetype/list" class="">Employee Type</a></li>
-                                <li class=""><a href="../employee/list" class="">Employee</a></li>
-                                <li class=""><a href="../customer/list" class="">Customer</a></li>
-                                <li class=""><a href="../payment/list" class="">Payment Manage</a></li>
+                                <li class=""><a href="../roomtype/list" class="">Thể loại phòng</a></li>
+                                <li class=""><a href="../room/list" class="">Phòng</a></li>
+                                <li class=""><a href="list" class="">Thể loại sản phẩm</a></li>
+                                <li class=""><a href="../ListProductController" class="">Sản phẩm</a></li>
+                                <li class=""><a href="../employeetype/list" class="">Vị trí nhân sự</a></li>
+                                <li class=""><a href="../employee/list" class="">Nhân sự</a></li>
+                                <li class=""><a href="../customer/list" class="">Khách hàng</a></li>
+                                <li class=""><a href="../payment/list" class="">Hóa đơn</a></li>
 
                             </ul>
                         </li>
@@ -104,11 +104,11 @@
                                 <form action="../producttype/search" method="POST">
                                     <div class="row">
                                         <div>
-                                            <input type="text" id="m-search" name="text_search" class="form-control" placeholder="Search for name">
+                                            <input type="text" id="m-search" name="text_search" class="form-control" placeholder="Tìm...">
                                         </div>
                                         <div>
                                             <span class="input-group-append search-btn btn btn-primary">
-                                                <button type="submit" class="btn btn-primary" >Search</button>
+                                                <button type="submit" class="btn btn-primary" >Tìm</button>
                                             </span>
                                         </div>
                                     </div>
@@ -118,8 +118,8 @@
                     </li>
                 </ul>
                 <ul class="navbar-nav ml-auto">
-                    <li style="font-weight: bold;">HELLO: ${sessionScope.account.getDisplayName()}</li>
-                    <li><a href="../logout" style="text-decoration: none;">Logout</a></li>
+                    <li style="font-weight: bold;">xin chào: ${sessionScope.account.getDisplayName()}</li>
+                    <li><a href="../logout" style="text-decoration: none;">Đăng xuất</a></li>
                 </ul>
             </div>
         </header>
@@ -138,11 +138,11 @@
                                         <div class="row align-items-center">
                                             <div class="col-md-12">
                                                 <div class="page-header-title">
-                                                    <h5>Product Type</h5>
+                                                    <h5>Loại sản phẩm</h5>
                                                 </div>
                                                 <ul class="breadcrumb">
                                                     <li class="breadcrumb-item"><a href="../admin/home"><i class="feather icon-home"></i></a></li>
-                                                    <li class="breadcrumb-item"><a href="list">Product Type Management</a></li>
+                                                    <li class="breadcrumb-item"><a href="list">Quản lý các loại sản phẩm</a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -150,14 +150,14 @@
                                 </div>
                                 <div style="margin-bottom: 20px;">
                                     <button type="button" class="btn btn-primary">
-                                        <a href="../producttype/insert" style="text-decoration: none;color: white;">Insert</a></button>
+                                        <a href="../producttype/insert" style="text-decoration: none;color: white;">Thêm loại sản phẩm mới</a></button>
                                 </div>
                                 <!-- [ breadcrumb ] end -->
                                 <!-- [ Main Content ] start -->
                                 <div class="col-xl-12 col-md-12">
                                     <div class="card table-card">
                                         <div class="card-header">
-                                            <h5>List Product Type</h5>
+                                            <h5>Danh sách các loại sản phẩm</h5>
                                         </div>
                                         <div class="card-body px-0 py-0">
                                             <div class="table-responsive" >
@@ -166,9 +166,9 @@
                                                         <thead>
                                                             <tr>
                                                                 <th><span>STT</span></th>
-                                                                <th><span>Product Type Name</span></th>
-                                                                <th><span>Update</span></th>
-                                                                <th><span>Delete</span></th>
+                                                                <th><span>Tên loại sản phẩm</span></th>
+                                                                <th><span>Sửa</span></th>
+                                                                <th><span>Xóa</span></th>
                                                             </tr>
                                                         </thead>
                                                         <tbody>
@@ -177,8 +177,8 @@
                                                                     <td>${status.count}</td>
                                                                     <td>${pt.getProductTypeName()}</td>
                                                                     <td><button type="button" class="btn btn-primary">
-                                                                                <a style="text-decoration: none;color: white;" href="../producttype/update?producttypeID=${pt.getID()}">Update</a></button></td> 
-                                                                    <td><button type="button" class="btn btn-danger"><a style="text-decoration: none;color: white;" href="../producttype/delete?producttypeID=${pt.getID()}">Delete</a></button></td> 
+                                                                                <a style="text-decoration: none;color: white;" href="../producttype/update?producttypeID=${pt.getID()}">Sửa</a></button></td> 
+                                                                    <td><button type="button" class="btn btn-danger"><a style="text-decoration: none;color: white;" href="../producttype/delete?producttypeID=${pt.getID()}">Xóa</a></button></td> 
                                                                 </tr>
                                                             </c:forEach>
 

@@ -315,7 +315,16 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>InsertEmployeeController</servlet-name>
-        <url-pattern>/customer/room_detail</url-pattern>
+        <url-pattern>/employee/insert</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>SearchEmployeeController</servlet-name>
+        <servlet-class>controller.employee.SearchEmployeeController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SearchEmployeeController</servlet-name>
+        <url-pattern>/employee/search</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

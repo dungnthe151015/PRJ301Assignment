@@ -55,25 +55,25 @@
                 <div class="navbar-content scroll-div">
                     <ul class="nav pcoded-inner-navbar">
                         <li class="nav-item pcoded-menu-caption">
-                            <label>Navigation</label>
+                            <label>Trang chủ</label>
                         </li>
                         <li class="nav-item">
-                            <a href="../admin/home" class="nav-link"><span class="pcoded-micon"><i class="feather icon-home"></i></span><span class="pcoded-mtext">Dashboard</span></a>
+                            <a href="../admin/home" class="nav-link"><span class="pcoded-micon"><i class="feather icon-home"></i></span><span class="pcoded-mtext">Trang chủ</span></a>
                         </li>
                         <li class="nav-item pcoded-menu-caption">
-                            <label>UI Element</label>
+                            <label>Quản lý</label>
                         </li>
                         <li class="nav-item pcoded-hasmenu">
-                            <a href="#!" class="nav-link"><span class="pcoded-micon"><i class="feather icon-box"></i></span><span class="pcoded-mtext">Componant</span></a>
+                            <a href="#!" class="nav-link"><span class="pcoded-micon"><i class="feather icon-box"></i></span><span class="pcoded-mtext">Các đối tượng</span></a>
                             <ul class="pcoded-submenu">
-                                <li class=""><a href="list" class="">Room Type</a></li>
-                                <li class=""><a href="../room/list" class="">Room</a></li>
-                                <li class=""><a href="../producttype/list" class="">Product Type</a></li>
-                                <li class=""><a href="../ListProductController" class="">Product</a></li>
-                                <li class=""><a href="../employeetype/list" class="">Employee Type</a></li>
-                                <li class=""><a href="../employee/list" class="">Employee</a></li>
-                                <li class=""><a href="../customer/list" class="">Customer</a></li>
-                                <li class=""><a href="../payment/list" class="">Payment Manage</a></li>
+                                <li class=""><a href="list" class="">Thể loại phòng</a></li>
+                                <li class=""><a href="../room/list" class="">Phòng</a></li>
+                                <li class=""><a href="../producttype/list" class="">Thể loại sản phẩm</a></li>
+                                <li class=""><a href="../ListProductController" class="">Sản phẩm</a></li>
+                                <li class=""><a href="../employeetype/list" class="">Vị trí nhân sự</a></li>
+                                <li class=""><a href="../employee/list" class="">Nhân sự</a></li>
+                                <li class=""><a href="../customer/list" class="">Khách hàng</a></li>
+                                <li class=""><a href="../payment/list" class="">Hóa đơn</a></li>
 
                             </ul>
                         </li>
@@ -105,8 +105,8 @@
                     </li>
                 </ul>
                 <ul class="navbar-nav ml-auto">
-                    <li style="font-weight: bold;">HELLO: ${sessionScope.account.getDisplayName()}</li>
-                    <li><a href="../logout" style="text-decoration: none;">Logout</a></li>
+                    <li style="font-weight: bold;">Xin chào: ${sessionScope.account.getDisplayName()}</li>
+                    <li><a href="../logout" style="text-decoration: none;">Đăng xuất</a></li>
                 </ul>
             </div>
         </header>
@@ -125,11 +125,11 @@
                                         <div class="row align-items-center">
                                             <div class="col-md-12">
                                                 <div class="page-header-title">
-                                                    <h5>Room Type</h5>
+                                                    <h5>Loại phòng</h5>
                                                 </div>
                                                 <ul class="breadcrumb">
                                                     <li class="breadcrumb-item"><a href="../admin/home"><i class="feather icon-home"></i></a></li>
-                                                    <li class="breadcrumb-item"><a href="insert">Update Room Type</a></li>
+                                                    <li class="breadcrumb-item">Sửa thông tin loại phòng</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -141,24 +141,24 @@
                                         <input type="hidden" name="roomtypeID" value="${rt.getID()}" />
                                         <table class="table table-striped" style="border: 1px solid black;">
                                             <tr>
-                                                <th scope="row">Room Type Name: </th>
+                                                <th scope="row">Tên loại phòng: </th>
                                                 <td><input style="border: 1px solid black;" name="name" value="${rt.getRoomTypeName()}" type="text" class="form-control" placeholder="Room type name" aria-describedby="basic-addon1"></td>
                                             </tr>
                                             <tr>
-                                                <th scope="row">Price: </th>
+                                                <th scope="row">Giá: </th>
                                                 <td><input style="border: 1px solid black;" name="price" value="${rt.getPrice()}" type="text" class="form-control" placeholder="Price" aria-describedby="basic-addon1"></td>
                                             </tr>
                                             <tr>
-                                                <th scope="row">Number Of People: </th>
+                                                <th scope="row">Số người ở tối đa: </th>
                                                 <td><input style="border: 1px solid black;" name="people" value="${rt.getNumberOfPeople()}" type="text" class="form-control" placeholder="Number of people" aria-describedby="basic-addon1"></td>
                                             </tr>
                                             <tr>
-                                                <th scope="row">Description: </th>
+                                                <th scope="row">Mô tả chi tiết: </th>
                                                 <td><p><input type="hidden" name="description2" value="${rt.getDescription()}" />${rt.getDescription()}</p>
                                                     <textarea style="border: 1px solid black;" name="description" class="form-control" aria-label="With textarea"></textarea></td>
                                             </tr>
                                         </table>
-                                        <button type="submit" class="btn btn-primary">Update</button>
+                                        <button type="submit" class="btn btn-primary">Sửa</button>
                                     </form>
 
                                 </div>

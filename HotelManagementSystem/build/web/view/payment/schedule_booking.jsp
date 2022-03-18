@@ -1,3 +1,5 @@
+<%@page import="model.Room"%>
+<%@page import="java.util.ArrayList"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -5,7 +7,7 @@
 
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>producttype-list</title>
+        <title>room-list</title>
         <!-- HTML5 Shim and Respond.js IE11 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 11]>
@@ -30,6 +32,7 @@
 
         <!-- vendor css -->
         <link rel="stylesheet" href="../assets/css/style.css">
+
     </head>
 
     <body class="">
@@ -68,7 +71,7 @@
                             <ul class="pcoded-submenu">
                                 <li class=""><a href="../roomtype/list" class="">Thể loại phòng</a></li>
                                 <li class=""><a href="../room/list" class="">Phòng</a></li>
-                                <li class=""><a href="list" class="">Thể loại sản phẩm</a></li>
+                                <li class=""><a href="../producttype/list" class="">Thể loại sản phẩm</a></li>
                                 <li class=""><a href="../ListProductController" class="">Sản phẩm</a></li>
                                 <li class=""><a href="../employeetype/list" class="">Vị trí nhân sự</a></li>
                                 <li class=""><a href="../employee/list" class="">Nhân sự</a></li>
@@ -100,25 +103,12 @@
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
                         <div class="main-search open">
-                            <div class="input-group">
-                                <form action="../producttype/search" method="POST">
-                                    <div class="row">
-                                        <div>
-                                            <input type="text" id="m-search" name="text_search" class="form-control" placeholder="Tìm...">
-                                        </div>
-                                        <div>
-                                            <span class="input-group-append search-btn btn btn-primary">
-                                                <button type="submit" class="btn btn-primary" >Tìm</button>
-                                            </span>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
+                            
                         </div>
                     </li>
                 </ul>
                 <ul class="navbar-nav ml-auto">
-                    <li style="font-weight: bold;">xin chào: ${sessionScope.account.getDisplayName()}</li>
+                    <li style="font-weight: bold;">Xin chào: ${sessionScope.account.getDisplayName()}</li>
                     <li><a href="../logout" style="text-decoration: none;">Đăng xuất</a></li>
                 </ul>
             </div>
@@ -138,26 +128,21 @@
                                         <div class="row align-items-center">
                                             <div class="col-md-12">
                                                 <div class="page-header-title">
-                                                    <h5>Loại sản phẩm</h5>
+                                                    <h5>Lịch đặt phòng</h5>
                                                 </div>
                                                 <ul class="breadcrumb">
                                                     <li class="breadcrumb-item"><a href="../admin/home"><i class="feather icon-home"></i></a></li>
-                                                    <li class="breadcrumb-item"><a href="list">Quản lý các loại sản phẩm</a></li>
+                                                    <li class="breadcrumb-item">Quản lý lịch đặt phòng</li>
                                                 </ul>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div style="margin-bottom: 20px;">
-                                    <button type="button" class="btn btn-primary">
-                                        <a href="../producttype/insert" style="text-decoration: none;color: white;">Thêm loại sản phẩm mới</a></button>
-                                </div>
-                                <!-- [ breadcrumb ] end -->
-                                <!-- [ Main Content ] start -->
+
                                 <div class="col-xl-12 col-md-12">
                                     <div class="card table-card">
                                         <div class="card-header">
-                                            <h5>Danh sách các loại sản phẩm</h5>
+                                            <h5>Danh sách các lịch đặt phòng</h5>
                                         </div>
                                         <div class="card-body px-0 py-0">
                                             <div class="table-responsive" >
@@ -166,23 +151,29 @@
                                                         <thead>
                                                             <tr>
                                                                 <th><span>STT</span></th>
-                                                                <th><span>Tên loại sản phẩm</span></th>
-                                                                <th><span>Sửa</span></th>
-                                                                <th><span>Xóa</span></th>
+                                                                <th><span>Tên phòng hoặc loại sản phẩm</span></th>
+                                                                <th><span>Số lượng</span></th>
+                                                                <th><span>Giá</span></th>
+                                                                <th><span>Tổng giá</span></th>
                                                             </tr>
                                                         </thead>
                                                         <tbody>
-                                                            <c:forEach items="${list}" var="pt" varStatus="status">
+                                                            <tr>
+                                                                <td>1</td>
+                                                                <td>${payment.getBooking().getRoom().getRoomName()}</td>
+                                                                <td>1</td>
+                                                                <td>${payment.getBooking().getRoom().getRoomType().getPrice()}</td> 
+                                                                <td>${payment.getBooking().getRoom().getRoomType().getPrice()}</td>
+                                                            </tr>
+                                                            <c:forEach items="${list_order}" var="o" varStatus="status">
                                                                 <tr>
                                                                     <td>${status.count}</td>
-                                                                    <td>${pt.getProductTypeName()}</td>
-                                                                    <td><button type="button" class="btn btn-primary">
-                                                                                <a style="text-decoration: none;color: white;" href="../producttype/update?producttypeID=${pt.getID()}">Sửa</a></button></td> 
-                                                                    <td><button type="button" class="btn btn-danger"><a style="text-decoration: none;color: white;" href="../producttype/delete?producttypeID=${pt.getID()}">Xóa</a></button></td> 
+                                                                    <td>${o.getProduct().getProductName()}</td>
+                                                                    <td>${o.getQuantity()}</td>
+                                                                    <td>${o.getPrice()}</td> 
+                                                                    <td>${o.getQuantity() * o.getPrice()}</td>
                                                                 </tr>
                                                             </c:forEach>
-
-
                                                         </tbody>
                                                     </table>
                                                 </div>
@@ -198,56 +189,7 @@
                 </div>
             </div>
         </div>
-        <!-- [ Main Content ] end -->
 
-        <!-- Warning Section start -->
-        <!-- Older IE warning message -->
-        <!--[if lt IE 11]>
-        <div class="ie-warning">
-            <h1>Warning!!</h1>
-            <p>You are using an outdated version of Internet Explorer, please upgrade
-               <br/>to any of the following web browsers to access this website.
-            </p>
-            <div class="iew-container">
-                <ul class="iew-download">
-                    <li>
-                        <a href="http://www.google.com/chrome/">
-                            <img src="../assets/images/browser/chrome.png" alt="Chrome">
-                            <div>Chrome</div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.mozilla.org/en-US/firefox/new/">
-                            <img src="../assets/images/browser/firefox.png" alt="Firefox">
-                            <div>Firefox</div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="http://www.opera.com">
-                            <img src="../assets/images/browser/opera.png" alt="Opera">
-                            <div>Opera</div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.apple.com/safari/">
-                            <img src="../assets/images/browser/safari.png" alt="Safari">
-                            <div>Safari</div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">
-                            <img src="../assets/images/browser/ie.png" alt="">
-                            <div>IE (11 & above)</div>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <p>Sorry for the inconvenience!</p>
-        </div>
-    <![endif]-->
-        <!-- Warning Section Ends -->
-
-        <!-- Required Js -->
         <script src="../assets/js/vendor-all.min.js"></script>
         <script src="../assets/plugins/bootstrap/js/bootstrap.min.js"></script>
         <script src="../assets/js/pcoded.min.js"></script>

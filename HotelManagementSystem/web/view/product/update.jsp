@@ -58,7 +58,7 @@
                             <label>Trang chủ</label>
                         </li>
                         <li class="nav-item">
-                            <a href="../admin/home" class="nav-link"><span class="pcoded-micon"><i class="feather icon-home"></i></span><span class="pcoded-mtext">Trang chủ</span></a>
+                            <a href="admin/home" class="nav-link"><span class="pcoded-micon"><i class="feather icon-home"></i></span><span class="pcoded-mtext">Trang chủ</span></a>
                         </li>
                         <li class="nav-item pcoded-menu-caption">
                             <label>Quản lý</label>
@@ -66,15 +66,14 @@
                         <li class="nav-item pcoded-hasmenu">
                             <a href="#!" class="nav-link"><span class="pcoded-micon"><i class="feather icon-box"></i></span><span class="pcoded-mtext">Các đối tượng</span></a>
                             <ul class="pcoded-submenu">
-                                <li class=""><a href="../roomtype/list" class="">Thể loại phòng</a></li>
-                                <li class=""><a href="../room/list" class="">Phòng</a></li>
-                                <li class=""><a href="list" class="">Thể loại sản phẩm</a></li>
-                                <li class=""><a href="../ListProductController" class="">Sản phẩm</a></li>
-                                <li class=""><a href="../employeetype/list" class="">Vị trí nhân sự</a></li>
-                                <li class=""><a href="../employee/list" class="">Nhân sự</a></li>
-                                <li class=""><a href="../customer/list" class="">Khách hàng</a></li>
-                                <li class=""><a href="../payment/list" class="">Hóa đơn</a></li>
-
+                                <li class=""><a href="roomtype/list" class="">Thể loại phòng</a></li>
+                                <li class=""><a href="room/list" class="">Phòng</a></li>
+                                <li class=""><a href="producttype/list" class="">Thể loại sản phẩm</a></li>
+                                <li class=""><a href="ListProductController" class="">Sản phẩm</a></li>
+                                <li class=""><a href="employeetype/list" class="">Vị trí nhân sự</a></li>
+                                <li class=""><a href="employee/list" class="">Nhân sự</a></li>
+                                <li class=""><a href="customer/list" class="">Khách hàng</a></li>
+                                <li class=""><a href="payment/list" class="">Hóa đơn</a></li>
                             </ul>
                         </li>
 
@@ -100,25 +99,12 @@
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
                         <div class="main-search open">
-                            <div class="input-group">
-                                <form action="../producttype/search" method="POST">
-                                    <div class="row">
-                                        <div>
-                                            <input type="text" id="m-search" name="text_search" class="form-control" placeholder="Tìm...">
-                                        </div>
-                                        <div>
-                                            <span class="input-group-append search-btn btn btn-primary">
-                                                <button type="submit" class="btn btn-primary" >Tìm</button>
-                                            </span>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
+
                         </div>
                     </li>
                 </ul>
                 <ul class="navbar-nav ml-auto">
-                    <li style="font-weight: bold;">xin chào: ${sessionScope.account.getDisplayName()}</li>
+                    <li style="font-weight: bold;">Xin chào: ${sessionScope.account.getDisplayName()}</li>
                     <li><a href="../logout" style="text-decoration: none;">Đăng xuất</a></li>
                 </ul>
             </div>
@@ -138,60 +124,50 @@
                                         <div class="row align-items-center">
                                             <div class="col-md-12">
                                                 <div class="page-header-title">
-                                                    <h5>Loại sản phẩm</h5>
+                                                    <h5>Sản phẩm</h5>
                                                 </div>
                                                 <ul class="breadcrumb">
                                                     <li class="breadcrumb-item"><a href="../admin/home"><i class="feather icon-home"></i></a></li>
-                                                    <li class="breadcrumb-item"><a href="list">Quản lý các loại sản phẩm</a></li>
+                                                    <li class="breadcrumb-item">Sửa thông tin của sản phẩm</li>
                                                 </ul>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div style="margin-bottom: 20px;">
-                                    <button type="button" class="btn btn-primary">
-                                        <a href="../producttype/insert" style="text-decoration: none;color: white;">Thêm loại sản phẩm mới</a></button>
+                                <div class="col-xl-12 col-md-12" >
+                                    <form action="update" method="POST">
+                                        <input type="hidden" name="ID" value="${product.getID()}" />
+                                        <table class="table table-striped" style="border: 1px solid black;">
+                                            <tr>
+                                                <th scope="row">Tên sản phẩm: </th>
+                                                <td><input style="border: 1px solid black;" name="name" value="${product.getProductName()}" type="text" class="form-control" placeholder="Tên sản phẩm" aria-describedby="basic-addon1"></td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">Giá: </th>
+                                                <td><input style="border: 1px solid black;" name="price" value="${product.getCost()}" type="text" class="form-control" placeholder="Giá" aria-describedby="basic-addon1"></td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">Sản phẩm thuộc loại: </th>
+                                                <td><select name="producttype">
+                                                        <c:forEach items="${list}" var="pt">
+                                                            <option value="${pt.getID()}" ${product.getProducType().getID() == pt.getID() ? "selected":""}>${pt.getProductTypeName()}</option>
+                                                        </c:forEach>
+
+                                                    </select></td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">Số lượng: </th>
+                                                <td><input style="border: 1px solid black;" value="${product.getQuantity()}" name="quantity" type="text" class="form-control" placeholder="Số lượng" aria-describedby="basic-addon1"></td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">Mô tả chi tiết: </th>
+                                                <td><input style="border: 1px solid black;" value="${product.getDescription()}" name="description" type="text" class="form-control" placeholder="Mô tả chi tiết" aria-describedby="basic-addon1"></td>
+                                            </tr>
+                                        </table>
+                                        <button type="submit" class="btn btn-primary">Sửa</button>
+                                    </form>
+
                                 </div>
-                                <!-- [ breadcrumb ] end -->
-                                <!-- [ Main Content ] start -->
-                                <div class="col-xl-12 col-md-12">
-                                    <div class="card table-card">
-                                        <div class="card-header">
-                                            <h5>Danh sách các loại sản phẩm</h5>
-                                        </div>
-                                        <div class="card-body px-0 py-0">
-                                            <div class="table-responsive" >
-                                                <div class="session-scroll" style="height:478px;position:relative;">
-                                                    <table class="table table-hover m-b-0">
-                                                        <thead>
-                                                            <tr>
-                                                                <th><span>STT</span></th>
-                                                                <th><span>Tên loại sản phẩm</span></th>
-                                                                <th><span>Sửa</span></th>
-                                                                <th><span>Xóa</span></th>
-                                                            </tr>
-                                                        </thead>
-                                                        <tbody>
-                                                            <c:forEach items="${list}" var="pt" varStatus="status">
-                                                                <tr>
-                                                                    <td>${status.count}</td>
-                                                                    <td>${pt.getProductTypeName()}</td>
-                                                                    <td><button type="button" class="btn btn-primary">
-                                                                                <a style="text-decoration: none;color: white;" href="../producttype/update?producttypeID=${pt.getID()}">Sửa</a></button></td> 
-                                                                    <td><button type="button" class="btn btn-danger"><a style="text-decoration: none;color: white;" href="../producttype/delete?producttypeID=${pt.getID()}">Xóa</a></button></td> 
-                                                                </tr>
-                                                            </c:forEach>
-
-
-                                                        </tbody>
-                                                    </table>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- [ Main Content ] end -->
                             </div>
                         </div>
                     </div>
