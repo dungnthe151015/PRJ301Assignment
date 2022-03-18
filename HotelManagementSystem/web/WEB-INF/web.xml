@@ -345,6 +345,15 @@
         <url-pattern>/employeetype/search</url-pattern>
     </servlet-mapping>
     
+    <servlet>
+        <servlet-name>PaymentScheduleBookingController</servlet-name>
+        <servlet-class>controller.payment.PaymentScheduleBookingController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>PaymentScheduleBookingController</servlet-name>
+        <url-pattern>/payment/schedule_booking</url-pattern>
+    </servlet-mapping>
+    
     <session-config>
         <session-timeout>
             30
