@@ -99,4 +99,28 @@ public class ProductDBContext extends DBContext {
             Logger.getLogger(ProductTypeDBContext.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+
+    public void insert(Product product) {
+        try {
+            String sql = "INSERT INTO [dbo].[Product]\n"
+                    + "           ([productName]\n"
+                    + "           ,[cost]\n"
+                    + "           ,[productTypeID]\n"
+                    + "           ,[quantity]\n"
+                    + "           ,[status]\n"
+                    + "           ,[description])\n"
+                    + "     VALUES\n"
+                    + "           (?, ?, ?, ?, ?, ?)";
+            ps = connection.prepareStatement(sql);
+            ps.setString(1, product.getProductName());
+            ps.setDouble(2, product.getCost());
+            ps.setInt(3, product.getProducType().getID());
+            ps.setInt(4, product.getQuantity());
+            ps.setBoolean(5, product.isStatus());
+            ps.setString(6, product.getDescription());
+            ps.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(ProductTypeDBContext.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 }

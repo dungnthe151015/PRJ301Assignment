@@ -363,6 +363,14 @@
         <url-pattern>/product/delete</url-pattern>
     </servlet-mapping>
     
+    <servlet>
+        <servlet-name>InsertProductController</servlet-name>
+        <servlet-class>controller.product.InsertProductController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>InsertProductController</servlet-name>
+        <url-pattern>/product/insert</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30
