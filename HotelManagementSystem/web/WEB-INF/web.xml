@@ -354,6 +354,15 @@
         <url-pattern>/payment/schedule_booking</url-pattern>
     </servlet-mapping>
     
+    <servlet>
+        <servlet-name>DeleteProductController</servlet-name>
+        <servlet-class>controller.product.DeleteProductController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DeleteProductController</servlet-name>
+        <url-pattern>/product/delete</url-pattern>
+    </servlet-mapping>
+    
     <session-config>
         <session-timeout>
             30

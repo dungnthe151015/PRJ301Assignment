@@ -86,4 +86,17 @@ public class ProductDBContext extends DBContext {
             Logger.getLogger(ProductTypeDBContext.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+
+    public void delete(int productID) {
+        try {
+            String sql = "DELETE FROM [dbo].[Product]\n"
+                    + "      WHERE ID = ?";
+            ps = connection.prepareStatement(sql);
+
+            ps.setInt(1, productID);
+            ps.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(ProductTypeDBContext.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 }
