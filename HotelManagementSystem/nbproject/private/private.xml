@@ -2,6 +2,12 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/C:/Users/ASUS/Desktop/ProjectWeb/PRJ301Assignment/HotelManagementSystem/src/java/filter/SecurityFilter.java</file>
+            <file>file:/C:/Users/ASUS/Desktop/ProjectWeb/PRJ301Assignment/HotelManagementSystem/web/view/customer/customer.jsp</file>
+            <file>file:/C:/Users/ASUS/Desktop/ProjectWeb/PRJ301Assignment/HotelManagementSystem/web/view/employee/list.jsp</file>
+            <file>file:/C:/Users/ASUS/Desktop/ProjectWeb/PRJ301Assignment/HotelManagementSystem/src/java/controller/customer/CustomerSearchController.java</file>
+            <file>file:/C:/Users/ASUS/Desktop/ProjectWeb/PRJ301Assignment/HotelManagementSystem/web/view/payment/list.jsp</file>
+        </group>
     </open-files>
 </project-private>

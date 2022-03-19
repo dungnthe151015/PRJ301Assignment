@@ -390,6 +390,15 @@
         <url-pattern>/product/update</url-pattern>
     </servlet-mapping>
     
+    <servlet>
+        <servlet-name>UpdateEmployeeTypeController</servlet-name>
+        <servlet-class>controller.employeetype.UpdateEmployeeTypeController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UpdateEmployeeTypeController</servlet-name>
+        <url-pattern>/employeetype/update</url-pattern>
+    </servlet-mapping>
+    
     <session-config>
         <session-timeout>
             30

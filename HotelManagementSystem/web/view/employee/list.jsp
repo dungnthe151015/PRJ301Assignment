@@ -177,7 +177,6 @@
                                                                 <th><span>Email</span></th>
                                                                 <th><span>Số điện thoại</span></th>
                                                                 <th><span>Vị trí</span></th>
-                                                                <th><span>Sửa</span></th>
                                                             </tr>
                                                         </thead>
                                                         <tbody>
@@ -192,7 +191,6 @@
                                                                 <td><%=list.get(i).getEmail()%></td>
                                                                 <td><%=list.get(i).getPhone()%></td>
                                                                 <td><%=list.get(i).getEmployeeType().getEmployeeTypeName()%></td>
-                                                                <td><button type="button" class="btn btn-primary">Update</button></td> 
                                                             </tr>
                                                             <%
                                                                 }

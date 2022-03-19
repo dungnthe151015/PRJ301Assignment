@@ -172,7 +172,7 @@
                                                                 <td><%=list.get(i).getAmount()%></td>
                                                                 <td><%=list.get(i).getDate()%></td>
                                                                 <td><%=list.get(i).getNote()%></td>
-                                                                <td><%=list.get(i).isStatus() == true ? "Đã thanh toán" : "Chưa thanh toán"%></td> 
+                                                                <td><%=list.get(i).isStatus() == false ? "Đã thanh toán" : "Chưa thanh toán"%></td> 
                                                             </tr>
                                                             <%
                                                                 }

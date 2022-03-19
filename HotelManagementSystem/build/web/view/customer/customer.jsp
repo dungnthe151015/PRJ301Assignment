@@ -62,25 +62,25 @@
                 <div class="navbar-content scroll-div">
                     <ul class="nav pcoded-inner-navbar">
                         <li class="nav-item pcoded-menu-caption">
-                            <label>Navigation</label>
+                            <label>Trang chủ</label>
                         </li>
                         <li class="nav-item">
-                            <a href="../admin/home" class="nav-link"><span class="pcoded-micon"><i class="feather icon-home"></i></span><span class="pcoded-mtext">Dashboard</span></a>
+                            <a href="../admin/home" class="nav-link"><span class="pcoded-micon"><i class="feather icon-home"></i></span><span class="pcoded-mtext">Trang chủ</span></a>
                         </li>
                         <li class="nav-item pcoded-menu-caption">
-                            <label>UI Element</label>
+                            <label>Quản lý</label>
                         </li>
                         <li class="nav-item pcoded-hasmenu">
-                            <a href="#!" class="nav-link"><span class="pcoded-micon"><i class="feather icon-box"></i></span><span class="pcoded-mtext">Componant</span></a>
+                            <a href="#!" class="nav-link"><span class="pcoded-micon"><i class="feather icon-box"></i></span><span class="pcoded-mtext">Các đối tượng</span></a>
                             <ul class="pcoded-submenu">
-                                <li class=""><a href="../roomtype/list" class="">Room Type</a></li>
-                                <li class=""><a href="../room/list" class="">Room</a></li>
-                                <li class=""><a href="../producttype/list" class="">Product Type</a></li>
-                                <li class=""><a href="../ListProductController" class="">Product</a></li>
-                                <li class=""><a href="../employeetype/list" class="">Employee Type</a></li>
-                                <li class=""><a href="../employee/list" class="">Employee</a></li>
-                                <li class=""><a href="list" class="">Customer</a></li>
-                                <li class=""><a href="../payment/list" class="">Payment Manage</a></li>
+                                <li class=""><a href="../roomtype/list" class="">Thể loại phòng</a></li>
+                                <li class=""><a href="../room/list" class="">Phòng</a></li>
+                                <li class=""><a href="../producttype/list" class="">Thể loại sản phẩm</a></li>
+                                <li class=""><a href="../ListProductController" class="">Sản phẩm</a></li>
+                                <li class=""><a href="../employeetype/list" class="">Vị trí nhân sự</a></li>
+                                <li class=""><a href="../employee/list" class="">Nhân sự</a></li>
+                                <li class=""><a href="list" class="">Khách hàng</a></li>
+                                <li class=""><a href="../payment/list" class="">Hoá đơn</a></li>
 
                             </ul>
                         </li>
@@ -106,21 +106,13 @@
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
                         <div class="main-search open">
-                            <div class="input-group">
-                                <input type="text" id="m-search" class="form-control" placeholder="Search . . .">
-                                <a href="#!" class="input-group-append search-close">
-                                    <i class="feather icon-x input-group-text"></i>
-                                </a>
-                                <span class="input-group-append search-btn btn btn-primary">
-                                    <i class="feather icon-search input-group-text"></i>
-                                </span>
-                            </div>
+                            
                         </div>
                     </li>
                 </ul>
                 <ul class="navbar-nav ml-auto">
-                    <li style="font-weight: bold;">HELLO: ${sessionScope.account.getDisplayName()}</li>
-                    <li><a href="../logout" style="text-decoration: none;">Logout</a></li>
+                    <li style="font-weight: bold;">Xin chào: ${sessionScope.account.getDisplayName()}</li>
+                    <li><a href="../logout" style="text-decoration: none;">Đăng xuất</a></li>
                 </ul>
             </div>
         </header>
@@ -139,26 +131,22 @@
                                         <div class="row align-items-center">
                                             <div class="col-md-12">
                                                 <div class="page-header-title">
-                                                    <h5>Customer</h5>
+                                                    <h5>Khách hàng</h5>
                                                 </div>
                                                 <ul class="breadcrumb">
                                                     <li class="breadcrumb-item"><a href="../admin/home"><i class="feather icon-home"></i></a></li>
-                                                    <li class="breadcrumb-item"><a href="list">Customer Management</a></li>
+                                                    <li class="breadcrumb-item"><a href="list">Quản lý các khách hàng</a></li>
                                                 </ul>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div style="margin-bottom: 20px;">
-                                    <button type="button" class="btn btn-primary">
-                                        <a href="" style="text-decoration: none;color: white;">Insert</a></button>
                                 </div>
                                 <!-- [ breadcrumb ] end -->
                                 <!-- [ Main Content ] start -->
                                 <div class="col-xl-12 col-md-12">
                                     <div class="card table-card">
                                         <div class="card-header">
-                                            <h5>List Customer</h5>
+                                            <h5>Danh sách khách hàng</h5>
                                         </div>
                                         <div class="card-body px-0 py-0">
                                             <div class="table-responsive" >
@@ -167,16 +155,14 @@
                                                         <thead>
                                                             <tr>
                                                                 <th><span>STT</span></th>
-                                                                <th><span>Name</span></th>
-                                                                <th><span>Image</span></th>
-                                                                <th><span>ID Proof</span></th>
-                                                                <th><span>Gender</span></th>
+                                                                <th><span>Tên</span></th>
+                                                                <th><span>Ảnh</span></th>
+                                                                <th><span>Số chứng minh thư</span></th>
+                                                                <th><span>Giới tính</span></th>
                                                                 <th><span>Email</span></th>
-                                                                <th><span>Phone</span></th>
-                                                                <th><span>Address</span></th>
-                                                                <th><span>Status</span></th>
-                                                                <th><span>Update</span></th>
-                                                                <th><span>Delete</span></th>
+                                                                <th><span>Số điện thoại</span></th>
+                                                                <th><span>Địa chỉ</span></th>
+                                                                <th><span>Trạng thái</span></th>
                                                             </tr>
                                                         </thead>
                                                         <tbody>
@@ -193,8 +179,6 @@
                                                                 <td><%=list.get(i).getPhone()%></td>
                                                                 <td><%=list.get(i).getAddress() %></td>
                                                                 <td><%=list.get(i).isStatus() == true ? "Còn hoạt động":"Không còn hoạt động" %></td>
-                                                                <td><button type="button" class="btn btn-primary">Update</button></td> 
-                                                                <td><button type="button" class="btn btn-danger">Delete</button></td> 
                                                             </tr>
                                                             <%
                                                                 }
